@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   ZEN NATURE THEME - Apple meets Forest
+   ======================================== */
+
+:root {
+  /* Primary Nature Colors */
+  --zen-forest: #4a7c59;
+  /* Deep forest green */
+  --zen-moss: #6b8f71;
+  /* Soft moss green */
+  --zen-sage: #9ab89e;
+  /* Light sage */
+  --zen-earth: #8b5a2b;
+  /* Rich earth brown */
+  --zen-bark: #a67c52;
+  /* Light bark brown */
+  --zen-sand: #d4c4a8;
+  /* Warm sand */
+
+  /* Accent Colors */
+  --zen-gold: #d4a853;
+  /* Warm golden yellow */
+  --zen-honey: #f5c542;
+  /* Bright honey */
+  --zen-violet: #7c6a9c;
+  /* Soft violet */
+  --zen-lavender: #a394c2;
+  /* Light lavender */
+
+  /* Neutrals */
+  --zen-cream: #faf8f5;
+  /* Warm white/cream */
+  --zen-paper: #f5f0e8;
+  /* Paper white */
+  --zen-stone: #e8e0d5;
+  /* Stone gray */
+  --zen-charcoal: #3d3d3d;
+  /* Soft black */
+
+  /* Functional */
+  --background: var(--zen-cream);
+  --foreground: var(--zen-charcoal);
+  --accent: var(--zen-forest);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.font-serif {
+  font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+}
+
+/* ========================================
+   Glass & Card Effects
+   ======================================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(74, 124, 89, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(74, 124, 89, 0.1);
+}
+
+.card-zen {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(74, 124, 89, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-zen:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* ========================================
+   Buttons - Rounded Pill Style
+   ======================================== */
+
+.btn-zen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--zen-forest) 0%, #3d6b4a 100%);
+  color: white;
+  box-shadow:
+    0 4px 16px rgba(74, 124, 89, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 8px 24px rgba(74, 124, 89, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+  background: rgba(74, 124, 89, 0.08);
+  color: var(--zen-forest);
+  border: 1px solid rgba(74, 124, 89, 0.15);
+}
+
+.btn-secondary:hover {
+  background: rgba(74, 124, 89, 0.15);
+  border-color: rgba(74, 124, 89, 0.25);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--zen-violet) 0%, #5d4d7a 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(124, 106, 156, 0.3);
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 106, 156, 0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--zen-charcoal);
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* ========================================
+   Inputs - Clean Zen Style
+   ======================================== */
+
+.input-zen {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(74, 124, 89, 0.12);
+  border-radius: 16px;
+  font-size: 0.9375rem;
+  color: var(--zen-charcoal);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-zen::placeholder {
+  color: rgba(61, 61, 61, 0.4);
+}
+
+.input-zen:focus {
+  background: white;
+  border-color: var(--zen-forest);
+  box-shadow:
+    0 0 0 3px rgba(74, 124, 89, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.textarea-zen {
+  min-height: 200px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+/* ========================================
+   Labels & Tags
+   ======================================== */
+
+.label-zen {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--zen-moss);
+  margin-bottom: 0.5rem;
+}
+
+.tag-zen {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tag-success {
+  background: rgba(74, 124, 89, 0.1);
+  color: var(--zen-forest);
+}
+
+.tag-warning {
+  background: rgba(212, 168, 83, 0.15);
+  color: var(--zen-earth);
+}
+
+.tag-error {
+  background: rgba(180, 80, 80, 0.1);
+  color: #a04040;
+}
+
+.tag-processing {
+  background: rgba(124, 106, 156, 0.12);
+  color: var(--zen-violet);
+}
+
+/* ========================================
+   Scrollbar - Minimal
+   ======================================== */
+
+.scrollbar-zen::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-zen::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-zen::-webkit-scrollbar-thumb {
+  background: rgba(74, 124, 89, 0.2);
+  border-radius: 3px;
+}
+
+.scrollbar-zen::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 124, 89, 0.35);
+}
+
+/* Hide scrollbar but allow scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(74, 124, 89, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(74, 124, 89, 0.35);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--zen-forest) 0%, var(--zen-moss) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.divider-zen {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.15), transparent);
+}
