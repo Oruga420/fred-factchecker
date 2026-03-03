@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DOMPurify from 'dompurify';
 import { Copy, FileText, List, AlertCircle } from 'lucide-react';
 
 interface Change {
@@ -69,7 +70,7 @@ export const ResultViewer: React.FC<ResultViewerProps> = ({ status, final, chang
                 {viewMode === "clean" ? (
                     <div
                         className="prose prose-sm prose-slate max-w-none"
-                        dangerouslySetInnerHTML={{ __html: final || "" }}
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(final || "") }}
                     />
                 ) : (
                     <div className="space-y-2 font-mono text-xs">
